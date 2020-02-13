@@ -52,7 +52,7 @@
 <layer number="42" name="bRestrict" color="1" fill="10" visible="yes" active="yes"/>
 <layer number="43" name="vRestrict" color="2" fill="10" visible="yes" active="yes"/>
 <layer number="44" name="Drills" color="7" fill="1" visible="no" active="yes"/>
-<layer number="45" name="Holes" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="45" name="Holes" color="7" fill="1" visible="no" active="yes"/>
 <layer number="46" name="Milling" color="3" fill="1" visible="no" active="yes"/>
 <layer number="47" name="Measures" color="7" fill="1" visible="no" active="yes"/>
 <layer number="48" name="Document" color="7" fill="1" visible="yes" active="yes"/>
@@ -166,6 +166,7 @@
 <hole x="11.3936" y="1.555" drill="0.75"/>
 <hole x="1.9448" y="1.047" drill="0.75"/>
 <hole x="1.8178" y="12.8072" drill="0.75"/>
+<text x="2.5908" y="2.032" size="1.143" layer="25" rot="R90">MARS HRFv1</text>
 </plain>
 <libraries>
 <library name="SparkFun-Resistors" urn="urn:adsk.eagle:library:532">
