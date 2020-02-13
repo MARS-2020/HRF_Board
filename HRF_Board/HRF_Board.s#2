@@ -1279,7 +1279,9 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="U$10" library="microbuilder" deviceset="GND" device=""/>
 <part name="SUPPLY5" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="1.8V" device=""/>
 <part name="SUPPLY6" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="3.3V" device=""/>
-<part name="SUPPLY7" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="1.8V" device=""/>
+<part name="C2" library="SparkFun-Capacitors" library_urn="urn:adsk.eagle:library:510" deviceset="1.0UF" device="-0603-16V-10%" package3d_urn="urn:adsk.eagle:package:37414/1" value="1uF"/>
+<part name="U$5" library="microbuilder" deviceset="GND" device=""/>
+<part name="SUPPLY3" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="1.8V" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -1315,7 +1317,9 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="U$10" gate="G$1" x="73.66" y="81.28"/>
 <instance part="SUPPLY5" gate="G$1" x="73.66" y="114.3"/>
 <instance part="SUPPLY6" gate="G$1" x="86.36" y="114.3"/>
-<instance part="SUPPLY7" gate="G$1" x="119.38" y="185.42"/>
+<instance part="C2" gate="G$1" x="134.62" y="193.04"/>
+<instance part="U$5" gate="G$1" x="134.62" y="182.88"/>
+<instance part="SUPPLY3" gate="G$1" x="134.62" y="203.2"/>
 </instances>
 <busses>
 </busses>
@@ -1394,9 +1398,14 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="VDD@2"/>
-<wire x1="119.38" y1="180.34" x2="91.44" y2="180.34" width="0.1524" layer="91"/>
-<pinref part="SUPPLY7" gate="G$1" pin="1.8V"/>
-<wire x1="119.38" y1="185.42" x2="119.38" y2="180.34" width="0.1524" layer="91"/>
+<wire x1="121.92" y1="180.34" x2="91.44" y2="180.34" width="0.1524" layer="91"/>
+<wire x1="121.92" y1="180.34" x2="121.92" y2="200.66" width="0.1524" layer="91"/>
+<pinref part="C2" gate="G$1" pin="1"/>
+<wire x1="121.92" y1="200.66" x2="134.62" y2="200.66" width="0.1524" layer="91"/>
+<wire x1="134.62" y1="200.66" x2="134.62" y2="198.12" width="0.1524" layer="91"/>
+<pinref part="SUPPLY3" gate="G$1" pin="1.8V"/>
+<wire x1="134.62" y1="200.66" x2="134.62" y2="203.2" width="0.1524" layer="91"/>
+<junction x="134.62" y="200.66"/>
 </segment>
 </net>
 <net name="3.3V" class="0">
@@ -1474,6 +1483,11 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="43.18" y1="91.44" x2="73.66" y2="91.44" width="0.1524" layer="91"/>
 <wire x1="73.66" y1="91.44" x2="73.66" y2="83.82" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="C2" gate="G$1" pin="2"/>
+<pinref part="U$5" gate="G$1" pin="GND"/>
+<wire x1="134.62" y1="190.5" x2="134.62" y2="185.42" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="INT" class="0">
 <segment>
@@ -1499,9 +1513,9 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <label x="134.62" y="175.26" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U$9" gate="G$1" pin="6"/>
-<wire x1="43.18" y1="116.84" x2="60.96" y2="116.84" width="0.1524" layer="91"/>
-<label x="55.88" y="116.84" size="1.778" layer="95"/>
+<pinref part="U$9" gate="G$1" pin="5"/>
+<wire x1="43.18" y1="111.76" x2="60.96" y2="111.76" width="0.1524" layer="91"/>
+<label x="55.88" y="111.76" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="SCL_WMD" class="0">
@@ -1511,9 +1525,9 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <label x="152.4" y="170.18" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U$9" gate="G$1" pin="5"/>
-<wire x1="43.18" y1="111.76" x2="60.96" y2="111.76" width="0.1524" layer="91"/>
-<label x="55.88" y="111.76" size="1.778" layer="95"/>
+<pinref part="U$9" gate="G$1" pin="6"/>
+<wire x1="43.18" y1="116.84" x2="60.96" y2="116.84" width="0.1524" layer="91"/>
+<label x="55.88" y="116.84" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$4" class="0">
