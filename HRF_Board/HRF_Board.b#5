@@ -166,6 +166,7 @@
 <hole x="11.3936" y="1.555" drill="0.75"/>
 <hole x="1.9448" y="1.047" drill="0.75"/>
 <hole x="1.8178" y="12.8072" drill="0.75"/>
+<text x="2.5908" y="2.032" size="1.143" layer="25" rot="R90">MARS HRFv1</text>
 </plain>
 <libraries>
 <library name="SparkFun-Resistors" urn="urn:adsk.eagle:library:532">
