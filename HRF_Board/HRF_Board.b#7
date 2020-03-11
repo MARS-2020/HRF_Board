@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="8.6.1">
+<eagle version="9.5.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -330,6 +330,18 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </package>
 </packages>
 </library>
+<library name="HRF_CONN">
+<packages>
+<package name="HRF_CONN">
+<smd name="P$1" x="0" y="1" dx="2.5" dy="0.635" layer="1" rot="R90"/>
+<smd name="P$2" x="1" y="1" dx="2.5" dy="0.635" layer="1" rot="R90"/>
+<smd name="P$3" x="2" y="1" dx="2.5" dy="0.635" layer="1" rot="R90"/>
+<smd name="P$4" x="3" y="1" dx="2.5" dy="0.635" layer="1" rot="R90"/>
+<smd name="P$5" x="4" y="1" dx="2.5" dy="0.635" layer="1" rot="R90"/>
+<smd name="P$6" x="5" y="1" dx="2.5" dy="0.635" layer="1" rot="R90"/>
+</package>
+</packages>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -414,6 +426,9 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <param name="checkRestrict" value="1"/>
 <param name="checkStop" value="0"/>
 <param name="checkValues" value="0"/>
+<param name="checkNames" value="1"/>
+<param name="checkWireStubs" value="1"/>
+<param name="checkPolygonWidth" value="0"/>
 <param name="useDiameter" value="13"/>
 <param name="maxErrors" value="50"/>
 </designrules>
@@ -534,14 +549,17 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="NAME" x="3.7617375" y="9.87298125" size="0.6096" layer="25" font="vector" ratio="20" rot="R180" align="bottom-center"/>
 <attribute name="PROD_ID" value="CAP-00868" x="3.7617375" y="10.63498125" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
-<element name="C1" library="SparkFun-Capacitors" library_urn="urn:adsk.eagle:library:510" package="0603" package3d_urn="urn:adsk.eagle:package:37414/1" value="4.7uF" x="8.288021875" y="10.8432625" rot="R90">
+<element name="C1" library="SparkFun-Capacitors" library_urn="urn:adsk.eagle:library:510" package="0603" package3d_urn="urn:adsk.eagle:package:37414/1" value="4.7uF" x="8.288021875" y="10.8432625" smashed="yes" rot="R90">
+<attribute name="NAME" x="7.526021875" y="10.8432625" size="0.6096" layer="25" font="vector" ratio="20" rot="R90" align="bottom-center"/>
 <attribute name="PROD_ID" value="CAP-00868" x="8.288021875" y="10.8432625" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="VALUE" x="9.050021875" y="10.8432625" size="0.6096" layer="27" font="vector" ratio="20" rot="R90" align="top-center"/>
 </element>
 <element name="R3" library="SparkFun-Resistors" library_urn="urn:adsk.eagle:library:532" package="0603" package3d_urn="urn:adsk.eagle:package:39650/1" value="4.7k" x="9.751059375" y="10.3352625" smashed="yes" rot="R90">
 <attribute name="NAME" x="8.989059375" y="10.3352625" size="0.6096" layer="25" font="vector" ratio="20" rot="R90" align="bottom-center"/>
 <attribute name="PROD_ID" value="RES-07828" x="9.751059375" y="10.3352625" size="1.778" layer="27" rot="R90" display="off"/>
 </element>
-<element name="U$9" library="FLAT_FLEX" package="FLAT_FLEX_8" value="FLAT_FLEX_8" x="2.481578125" y="0.073659375"/>
+<element name="U$9" library="FLAT_FLEX" package="FLAT_FLEX_8" value="FLAT_FLEX_8" x="2.481578125" y="0.073659375" smashed="yes"/>
+<element name="U$1" library="HRF_CONN" package="HRF_CONN" value="HRF_CONN" x="0.381" y="-3.302" smashed="yes"/>
 </elements>
 <signals>
 <signal name="GND">
@@ -578,6 +596,10 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <vertex x="4.3942" y="4.3688"/>
 <vertex x="4.3942" y="3.6322"/>
 </polygon>
+<contactref element="U$1" pad="P$1"/>
+<wire x1="4.0132" y1="4.023659375" x2="4.281578125" y2="4.023659375" width="0" layer="19" extent="1-1"/>
+<wire x1="3.781578125" y1="4.023659375" x2="4.0132" y2="4.023659375" width="0" layer="19" extent="1-1"/>
+<wire x1="0.381" y1="-2.302" x2="3.781578125" y2="4.023659375" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="HR_SDA">
 <contactref element="U1" pad="3"/>
@@ -597,6 +619,8 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <via x="5.715" y="7.747" extent="1-16" drill="0.35"/>
 <wire x1="5.715" y1="7.747" x2="5.7022" y2="7.7598" width="0.2032" layer="16"/>
 <wire x1="5.7022" y1="7.7598" x2="4.42348125" y2="7.7598" width="0.2032" layer="16"/>
+<contactref element="U$1" pad="P$3"/>
+<wire x1="2.381" y1="-2.302" x2="5.715" y2="2.54" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="HR_SCL">
 <contactref element="U1" pad="2"/>
@@ -619,6 +643,8 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <wire x1="2.4894" y1="6.9598" x2="2.3622" y2="6.8326" width="0.2032" layer="16"/>
 <wire x1="2.3622" y1="6.8326" x2="2.3622" y2="3.3528" width="0.2032" layer="16"/>
 <wire x1="2.3622" y1="3.3528" x2="2.65938125" y2="3.05561875" width="0.2032" layer="16"/>
+<contactref element="U$1" pad="P$2"/>
+<wire x1="1.381" y1="-2.302" x2="4.94538125" y2="3.05561875" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="1.8V">
 <contactref element="R2" pad="2"/>
@@ -647,6 +673,8 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <wire x1="9.751059375" y1="7.774940625" x2="9.751059375" y2="9.4852625" width="0.3048" layer="1"/>
 <wire x1="9.751059375" y1="9.4852625" x2="9.406521875" y2="9.8298" width="0.3048" layer="1"/>
 <wire x1="9.406521875" y1="9.8298" x2="8.288021875" y2="9.8298" width="0.3048" layer="1"/>
+<contactref element="U$1" pad="P$6"/>
+<wire x1="5.381" y1="-2.302" x2="7.281578125" y2="4.023659375" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="3.3V">
 <contactref element="U1" pad="9"/>
@@ -670,6 +698,8 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <wire x1="6.8072" y1="2.1082" x2="6.477" y2="1.778" width="0.3048" layer="1"/>
 <wire x1="6.281578125" y1="3.065621875" x2="6.8072" y2="2.54" width="0.3048" layer="1"/>
 <wire x1="6.477" y1="1.778" x2="2.413" y2="1.778" width="0.3048" layer="1"/>
+<contactref element="U$1" pad="P$4"/>
+<wire x1="6.281578125" y1="4.023659375" x2="3.381" y2="-2.302" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="INT">
 <contactref element="U1" pad="13"/>
@@ -696,8 +726,17 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <wire x1="10.541" y1="8.636" x2="10.287" y2="8.382" width="0.2032" layer="1"/>
 <wire x1="10.287" y1="8.382" x2="10.287" y2="5.08" width="0.2032" layer="1"/>
 <wire x1="10.287" y1="5.08" x2="8.128" y2="2.921" width="0.2032" layer="1"/>
+<contactref element="U$1" pad="P$5"/>
+<wire x1="4.381" y1="-2.302" x2="6.781578125" y2="4.023659375" width="0" layer="19" extent="1-1"/>
 </signal>
 </signals>
+<mfgpreviewcolors>
+<mfgpreviewcolor name="soldermaskcolor" color="0xC8008000"/>
+<mfgpreviewcolor name="silkscreencolor" color="0xFFFEFEFE"/>
+<mfgpreviewcolor name="backgroundcolor" color="0xFF282828"/>
+<mfgpreviewcolor name="coppercolor" color="0xFFFFBF00"/>
+<mfgpreviewcolor name="substratecolor" color="0xFF786E46"/>
+</mfgpreviewcolors>
 </board>
 </drawing>
 <compatibility>
